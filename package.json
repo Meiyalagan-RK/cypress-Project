@@ -1,46 +1,12 @@
-npx cypress open
-# or if you prefer a script, add one like \"cypress:open\": \"cypress open\"\n```
-
-Next steps I can do (pick any)
-- Add JUnit or Mochawesome reporter and upload test-results so GitHub Actions shows annotations.
-- Use the official `cypress-io/github-action` to simplify setup and caching further (I kept a minimal plain approach for clarity).
-- Remove or update the old `cypress/workflows/cypress_test.yaml` to avoid confusion.
-- Run a local CI dry-run (I can run `npm ci` and `npm run test:ci` here if you want — it will actually execute your tests locally).
-
-Quality gates
-- Build: PASS — edits are JSON/YAML valid (package.json and workflow file updated).
-- Lint/Typecheck: N/A for this repo.
-- Tests: I did not run the tests to avoid executing your test suite without permission; run `npm run test:ci` locally or I can execute if you want.
-
-If you'd like, I can:
-- Switch the workflow to use `cypress-io/github-action@v5` which can provide automatic caching and nicer integration (I can update the workflow to that).
-- Add reporters and a failing-test upload strategy so CI fails produce JUnit XML and are visible in PR checks.
-
-Which of these next steps should I do now?npx cypress open
-# or if you prefer a script, add one like \"cypress:open\": \"cypress open\"\n```
-
-Next steps I can do (pick any)
-- Add JUnit or Mochawesome reporter and upload test-results so GitHub Actions shows annotations.
-- Use the official `cypress-io/github-action` to simplify setup and caching further (I kept a minimal plain approach for clarity).
-- Remove or update the old `cypress/workflows/cypress_test.yaml` to avoid confusion.
-- Run a local CI dry-run (I can run `npm ci` and `npm run test:ci` here if you want — it will actually execute your tests locally).
-
-Quality gates
-- Build: PASS — edits are JSON/YAML valid (package.json and workflow file updated).
-- Lint/Typecheck: N/A for this repo.
-- Tests: I did not run the tests to avoid executing your test suite without permission; run `npm run test:ci` locally or I can execute if you want.
-
-If you'd like, I can:
-- Switch the workflow to use `cypress-io/github-action@v5` which can provide automatic caching and nicer integration (I can update the workflow to that).
-- Add reporters and a failing-test upload strategy so CI fails produce JUnit XML and are visible in PR checks.
-
-Which of these next steps should I do now?{
+{
   "name": "cypress-project",
   "version": "1.0.0",
   "description": "Automation framework , POM, CI/CD integration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ci": "cypress run --headless --browser chrome",
+    "cypress:open": "cypress open"
   },
   "author": "",
   "license": "ISC",
