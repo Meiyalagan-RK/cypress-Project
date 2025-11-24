@@ -2,7 +2,6 @@ name: CI - Cypress Tests
 
 on:
   push:
-    branches: [ main ]
     paths:
       - 'cypress/**'
       - 'cypress.config.js'
